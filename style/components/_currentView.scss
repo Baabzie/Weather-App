@@ -1,0 +1,36 @@
+.current-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        margin:5px 0 0 0;;
+    }
+    .date-info-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+        h2 {
+            font-size: 16px;
+            margin:0;;
+        }
+    }
+
+    .weather-info-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        .current-icon {
+            width: 50px;
+        }
+        p {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 0px;
+        }
+    }
+
+}

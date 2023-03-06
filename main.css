@@ -5,6 +5,41 @@
   align-items: center;
 }
 
+.current-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.current-view h1 {
+  margin: 5px 0 0 0;
+}
+.current-view .date-info-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
+.current-view .date-info-div h2 {
+  font-size: 16px;
+  margin: 0;
+}
+.current-view .weather-info-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.current-view .weather-info-div .current-icon {
+  width: 50px;
+}
+.current-view .weather-info-div p {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0px;
+}
+
 .week-day-list {
   display: flex;
   flex-direction: column;
