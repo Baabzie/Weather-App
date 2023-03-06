@@ -3,9 +3,38 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
-header img {
+header .logo-div img {
   width: 80px;
+}
+header .search-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .search-div .search-bar-div input {
+  border-radius: 16px;
+  border: none;
+  border-radius: 16px 0 0 16px;
+  height: 30px;
+}
+header .search-div .search-icon-div {
+  background-color: #fff;
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+  border: none;
+  border-radius: 0 16px 16px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .search-div .search-icon-div img {
+  height: 20px;
 }
 
 .current-view {
@@ -13,7 +42,15 @@ header img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border-radius: 16px;
+  border: none;
+  padding: 35px 0;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 80%;
+  max-width: 300px;
 }
 .current-view h1 {
   margin: 5px 0 0 0;
@@ -51,8 +88,10 @@ header img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  padding: 0 10px;
+  gap: 10px;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 50px;
 }
 .week-day-list .week-day-header {
   display: flex;
@@ -62,11 +101,12 @@ header img {
   justify-content: flex-end;
   gap: 12px;
   width: 100%;
+  max-width: 500px;
   font-size: 12px;
   padding-right: 30px;
 }
 .week-day-list .week-day-header p {
-  margin: 8px 0 8px 0;
+  margin: 3px 0 3px 0;
 }
 .week-day-list .week-day-btn {
   display: flex;
@@ -75,6 +115,7 @@ header img {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 500px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 16px;
@@ -104,22 +145,38 @@ header img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-items: flex-end;
 }
 .week-day-list .week-day-btn .weather-info-div .week-day-temperature-div h3 {
   margin: 2px;
 }
 
 footer {
+  width: 100%;
+  bottom: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: auto;
+}
+
+html {
+  min-height: 100vh;
 }
 
 body {
   margin: 0;
   background-color: #20a2be;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
 }
 
 * {

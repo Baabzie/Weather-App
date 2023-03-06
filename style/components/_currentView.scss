@@ -1,6 +1,13 @@
 .current-view {
     @include column;
-    margin: 50px 0;
+    @include gradiant;
+    @include border;
+    padding: 35px 0;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 80%;
+    max-width: 300px;
     h1 {
         margin:5px 0 0 0;;
     }

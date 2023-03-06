@@ -1,27 +1,30 @@
 
 .week-day-list {
     @include column;
-    gap: 5px;
-    padding: 0 10px;
+    gap: 10px;
+    width: 90%;
+    margin:auto;
+    margin-bottom: 50px;
     .week-day-header {
         @include row;
         justify-content: flex-end;
         gap: 12px;
         width: 100%;
+        max-width: 500px;
         font-size: 12px;
         padding-right: 30px;
         p {
-            margin: 8px 0 8px 0;
+            margin: 3px 0 3px 0;
         }
     }
     .week-day-btn {
         @include row;
         justify-content: space-between;
         width: 100%;
+        max-width: 500px;
         padding-left: 20px;
         padding-right: 20px;
-        border-radius: 16px;
-        border: none;
+        @include border;
 
         @include gradiant;
     
@@ -41,6 +44,7 @@
         
             .week-day-temperature-div {
                 @include column;
+                align-items: flex-end;
         
                 h3 {
                     margin: 2px;

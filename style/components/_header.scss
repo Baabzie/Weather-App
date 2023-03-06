@@ -1,6 +1,32 @@
 header {
     @include row;
-    img {
-        width: 80px;
+    justify-content: space-around;
+    width: 100%;
+    .logo-div{
+        img {
+            width: 80px;
+        }
+    }
+    .search-div{
+        @include row;
+        .search-bar-div{
+            
+            input{
+                @include border;
+                border-radius: 16px 0 0 16px;
+                height: 30px;
+            }
+        }
+        .search-icon-div{
+            background-color: $mainTextColor;
+            height: 32px;
+            width: 32px;
+            @include border;
+            border-radius: 0 16px 16px 0;
+            @include row;
+            img {
+                height: 20px;
+            }
+        }
     }
 }

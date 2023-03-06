@@ -9,10 +9,21 @@
 @import "style/components/weekDayList";
 @import "style/components/footer";
 
+html{
+    min-height: 100vh;
+}
+
 body {
     margin:0;
     background-color: $maincolor;
+    min-height: 100vh;
+    @include column;
 }
+
+main {
+    width: 100%;
+}
+
 
 * {
     color: $mainTextColor;

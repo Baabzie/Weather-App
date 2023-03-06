@@ -24,3 +24,8 @@
 @mixin iconColor{
     filter: invert(1) grayscale(100%) brightness(1000%);
 }
+
+@mixin border{
+    border-radius: 16px;
+    border: none;
+}
