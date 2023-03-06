@@ -1,9 +1,23 @@
+
 .week-day-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     gap: 5px;
+    .week-day-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        font-size: 12px;
+        padding-right: 20px;
+        p {
+            margin: 8px 0 8px 0;
+        }
+    }
     .week-day-btn {
         display: flex;
         flex-direction: row;
