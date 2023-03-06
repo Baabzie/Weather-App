@@ -1,8 +1,9 @@
 
 .week-day-list {
     @include column;
-    gap: 10px;
+    gap: $listGap;
     width: 90%;
+    max-width: 500px;
     margin:auto;
     margin-bottom: 50px;
     .week-day-header {
@@ -10,7 +11,6 @@
         justify-content: flex-end;
         gap: 12px;
         width: 100%;
-        max-width: 500px;
         font-size: 12px;
         padding-right: 30px;
         p {
@@ -21,7 +21,6 @@
         @include row;
         justify-content: space-between;
         width: 100%;
-        max-width: 500px;
         padding-left: 20px;
         padding-right: 20px;
         @include border;

@@ -26,6 +26,6 @@
 }
 
 @mixin border{
-    border-radius: 16px;
+    border-radius: $borderRadius;
     border: none;
 }

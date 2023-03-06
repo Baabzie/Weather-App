@@ -1,0 +1,62 @@
+.day-list {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    gap: $listGap;
+    @include column;
+    h1 {
+        width: 100%;
+        margin-bottom: 5px
+    }
+    .day-list-header{
+        @include row;
+        width: 100%;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .info {
+            font-size: 12px;
+            gap: 6px;
+            @include row;
+            p {
+                width: 40px;
+                text-align: center;
+                margin: 3px 0 3px 0;
+            }
+        }
+    }
+    .hour {
+        @include border;
+        @include row;
+        @include gradiant;
+        width: 100%;
+        height: 35px;
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: space-between;
+        .info {
+            gap: 6px;
+            @include row;
+            .hour-icon{
+                height:20px;
+                width: 40px;
+                @include iconColor;
+            }
+            p {
+                width: 40px;
+                text-align: center;
+                margin: 3px 0 3px 0;
+            }
+            .temp {
+
+                width: 40px;
+                p {
+                    text-align: right;
+                    width: auto;
+                    padding-right: 6px;
+                }
+            }
+        }
+    }
+}

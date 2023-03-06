@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="main.css">
+    <script type="module" src="main.js" defer ></script>
 </head>
 <body>
     <header>
@@ -22,121 +23,179 @@
         </div>
     </header>
     <main>
-        <div id="currentDiv">
-            <div class="current-view">
-                <h1>Södermalm</h1>
-                <div class="date-info-div">
-                    <h2>Måndag</h2>
-                    <h2>6/3</h2>
+        <div id="weekViewDiv">
+            <div id="currentDiv">
+                <div class="current-view">
+                    <h1>Södermalm</h1>
+                    <div class="date-info-div">
+                        <h2>Måndag</h2>
+                        <h2>6/3</h2>
+                    </div>
+                    <div class="weather-info-div">
+                        <img class="current-icon" src="/content/icons/snowflake.svg" alt="" srcset="">
+                        <p>-4°</p>
+                    </div>
                 </div>
-                <div class="weather-info-div">
-                    <img class="current-icon" src="/content/icons/snowflake.svg" alt="" srcset="">
-                    <p>-4°</p>
+            </div>
+            <div id="warningDiv"></div>
+            <div id="weekDiv">
+                <div class="week-day-list" id="weekDayList">
+                    <div class="week-day-header">
+                        <p>Weather</p>
+                        <div>
+                            <p>High</p>
+                            <p>Low</p>
+                        </div>
+                    </div>
+                    <button class="week-day-btn">
+                        <div class="date-info-div">
+                            <h2>Måndag</h2>
+                            <h3>6/3</h3>
+                        </div>
+                        <div class="weather-info-div">
+                            <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
+                            <div class="week-day-temperature-div">
+                                <h3>0°</h3>
+                                <h3>-4°</h3>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="week-day-btn">
+                        <div class="date-info-div">
+                            <h2>Måndag</h2>
+                            <h3>6/3</h3>
+                        </div>
+                        <div class="weather-info-div">
+                            <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
+                            <div class="week-day-temperature-div">
+                                <h3>0°</h3>
+                                <h3>-4°</h3>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="week-day-btn">
+                        <div class="date-info-div">
+                            <h2>Måndag</h2>
+                            <h3>6/3</h3>
+                        </div>
+                        <div class="weather-info-div">
+                            <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
+                            <div class="week-day-temperature-div">
+                                <h3>0°</h3>
+                                <h3>-4°</h3>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="week-day-btn">
+                        <div class="date-info-div">
+                            <h2>Måndag</h2>
+                            <h3>6/3</h3>
+                        </div>
+                        <div class="weather-info-div">
+                            <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
+                            <div class="week-day-temperature-div">
+                                <h3>0°</h3>
+                                <h3>-4°</h3>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="week-day-btn">
+                        <div class="date-info-div">
+                            <h2>Måndag</h2>
+                            <h3>6/3</h3>
+                        </div>
+                        <div class="weather-info-div">
+                            <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
+                            <div class="week-day-temperature-div">
+                                <h3>0°</h3>
+                                <h3>-4°</h3>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="week-day-btn">
+                        <div class="date-info-div">
+                            <h2>Måndag</h2>
+                            <h3>6/3</h3>
+                        </div>
+                        <div class="weather-info-div">
+                            <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
+                            <div class="week-day-temperature-div">
+                                <h3>0°</h3>
+                                <h3>-4°</h3>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="week-day-btn">
+                        <div class="date-info-div">
+                            <h2>Måndag</h2>
+                            <h3>6/3</h3>
+                        </div>
+                        <div class="weather-info-div">
+                            <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
+                            <div class="week-day-temperature-div">
+                                <h3>0°</h3>
+                                <h3>-4°</h3>
+                            </div>
+                        </div>
+                    </button>
+                    
                 </div>
             </div>
         </div>
-        <div id="warningDiv"></div>
-        <div id="weekDiv">
-            <div class="week-day-list" id="weekDayList">
-                <div class="week-day-header">
-                    <p>Weather</p>
-                    <div>
-                        <p>High</p>
-                        <p>Low</p>
+        <div id="dayViewDiv">
+            <div class="breadcrum">
+
+            </div>
+            <div class="day-list">
+                <h1>Måndag</h1>
+                <div class="day-list-header">
+                    <span>Time</span>
+                    <div class="info">
+                        <div class="wind">
+                            <p>Wind</p>
+                            <p>(m/s)</p>
+                        </div>
+                        <div class="rain">
+                            <p>Rain</p>
+                            <p>(mm)</p>
+                        </div>
+                        <p>Weather</p>
+                        <p>Temp</p>
                     </div>
                 </div>
-                <button class="week-day-btn">
-                    <div class="date-info-div">
-                        <h2>Måndag</h2>
-                        <h3>6/3</h3>
-                    </div>
-                    <div class="weather-info-div">
-                        <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
-                        <div class="week-day-temperature-div">
-                            <h3>0°</h3>
-                            <h3>-4°</h3>
+                <div class="hour">
+                    <span>13:00</span>
+                    <div class="info">
+                        <p>10</p>
+                        <p>3</p>
+                        <img class="hour-icon" src="content/icons/cloud-bolt.svg" alt="">
+                        <div class="temp">
+                            <p>-4°</p>
                         </div>
                     </div>
-                </button>
-                <button class="week-day-btn">
-                    <div class="date-info-div">
-                        <h2>Måndag</h2>
-                        <h3>6/3</h3>
-                    </div>
-                    <div class="weather-info-div">
-                        <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
-                        <div class="week-day-temperature-div">
-                            <h3>0°</h3>
-                            <h3>-4°</h3>
+                </div>
+                <div class="hour">
+                    <span>13:00</span>
+                    <div class="info">
+                        <p>10</p>
+                        <p>30</p>
+                        <img class="hour-icon" src="content/icons/cloud-bolt.svg" alt="">
+                        <div class="temp">
+                            <p>4°</p>
                         </div>
                     </div>
-                </button>
-                <button class="week-day-btn">
-                    <div class="date-info-div">
-                        <h2>Måndag</h2>
-                        <h3>6/3</h3>
-                    </div>
-                    <div class="weather-info-div">
-                        <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
-                        <div class="week-day-temperature-div">
-                            <h3>0°</h3>
-                            <h3>-4°</h3>
+                </div>
+                <div class="hour">
+                    <span>13:00</span>
+                    <div class="info">
+                        <p>8</p>
+                        <p>0</p>
+                        <img class="hour-icon" src="content/icons/cloud-bolt.svg" alt="">
+                        <div class="temp">
+                            <p>-40°</p>
                         </div>
                     </div>
-                </button>
-                <button class="week-day-btn">
-                    <div class="date-info-div">
-                        <h2>Måndag</h2>
-                        <h3>6/3</h3>
-                    </div>
-                    <div class="weather-info-div">
-                        <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
-                        <div class="week-day-temperature-div">
-                            <h3>0°</h3>
-                            <h3>-4°</h3>
-                        </div>
-                    </div>
-                </button>
-                <button class="week-day-btn">
-                    <div class="date-info-div">
-                        <h2>Måndag</h2>
-                        <h3>6/3</h3>
-                    </div>
-                    <div class="weather-info-div">
-                        <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
-                        <div class="week-day-temperature-div">
-                            <h3>0°</h3>
-                            <h3>-4°</h3>
-                        </div>
-                    </div>
-                </button>
-                <button class="week-day-btn">
-                    <div class="date-info-div">
-                        <h2>Måndag</h2>
-                        <h3>6/3</h3>
-                    </div>
-                    <div class="weather-info-div">
-                        <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
-                        <div class="week-day-temperature-div">
-                            <h3>0°</h3>
-                            <h3>-4°</h3>
-                        </div>
-                    </div>
-                </button>
-                <button class="week-day-btn">
-                    <div class="date-info-div">
-                        <h2>Måndag</h2>
-                        <h3>6/3</h3>
-                    </div>
-                    <div class="weather-info-div">
-                        <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
-                        <div class="week-day-temperature-div">
-                            <h3>0°</h3>
-                            <h3>-4°</h3>
-                        </div>
-                    </div>
-                </button>
-                
+                </div>
             </div>
         </div>
     </main>

@@ -16,7 +16,7 @@ header .search-div {
   align-items: center;
 }
 header .search-div .search-bar-div input {
-  border-radius: 16px;
+  border-radius: 8px;
   border: none;
   border-radius: 16px 0 0 16px;
   height: 30px;
@@ -25,7 +25,7 @@ header .search-div .search-icon-div {
   background-color: #fff;
   height: 32px;
   width: 32px;
-  border-radius: 16px;
+  border-radius: 8px;
   border: none;
   border-radius: 0 16px 16px 0;
   display: flex;
@@ -43,7 +43,7 @@ header .search-div .search-icon-div img {
   justify-content: center;
   align-items: center;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
-  border-radius: 16px;
+  border-radius: 8px;
   border: none;
   padding: 35px 0;
   margin: auto;
@@ -88,8 +88,9 @@ header .search-div .search-icon-div img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   width: 90%;
+  max-width: 500px;
   margin: auto;
   margin-bottom: 50px;
 }
@@ -101,7 +102,6 @@ header .search-div .search-icon-div img {
   justify-content: flex-end;
   gap: 12px;
   width: 100%;
-  max-width: 500px;
   font-size: 12px;
   padding-right: 30px;
 }
@@ -115,10 +115,9 @@ header .search-div .search-icon-div img {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 500px;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 16px;
+  border-radius: 8px;
   border: none;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
 }
@@ -149,6 +148,83 @@ header .search-div .search-icon-div img {
 }
 .week-day-list .week-day-btn .weather-info-div .week-day-temperature-div h3 {
   margin: 2px;
+}
+
+.day-list {
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.day-list h1 {
+  width: 100%;
+  margin-bottom: 5px;
+}
+.day-list .day-list-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.day-list .day-list-header .info {
+  font-size: 12px;
+  gap: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.day-list .day-list-header .info p {
+  width: 40px;
+  text-align: center;
+  margin: 3px 0 3px 0;
+}
+.day-list .hour {
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
+  width: 100%;
+  height: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: space-between;
+}
+.day-list .hour .info {
+  gap: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.day-list .hour .info .hour-icon {
+  height: 20px;
+  width: 40px;
+  filter: invert(1) grayscale(100%) brightness(1000%);
+}
+.day-list .hour .info p {
+  width: 40px;
+  text-align: center;
+  margin: 3px 0 3px 0;
+}
+.day-list .hour .info .temp {
+  width: 40px;
+}
+.day-list .hour .info .temp p {
+  text-align: right;
+  width: auto;
+  padding-right: 6px;
 }
 
 footer {
