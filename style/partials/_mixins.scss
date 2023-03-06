@@ -1,0 +1,26 @@
+@mixin row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin gradiant{
+    background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+    );
+}
+
+@mixin iconColor{
+    filter: invert(1) grayscale(100%) brightness(1000%);
+}

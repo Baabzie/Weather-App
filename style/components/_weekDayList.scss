@@ -1,57 +1,46 @@
 
 .week-day-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+    @include column;
     gap: 5px;
+    padding: 0 10px;
     .week-day-header {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;;
-        align-items: center;
+        @include row;
+        justify-content: flex-end;
         gap: 12px;
         width: 100%;
         font-size: 12px;
-        padding-right: 20px;
+        padding-right: 30px;
         p {
             margin: 8px 0 8px 0;
         }
     }
     .week-day-btn {
-        display: flex;
-        flex-direction: row;
+        @include row;
         justify-content: space-between;
-        align-items: center;
         width: 100%;
         padding-left: 20px;
         padding-right: 20px;
         border-radius: 16px;
+        border: none;
+
+        @include gradiant;
     
         .date-info-div{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
+            @include row;
             gap: 15px;
         }
     
         .weather-info-div{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
+            @include row;
             gap:20px;
     
             .week-day-icon {
                 width: 20px;
+                @include iconColor;
             }
         
             .week-day-temperature-div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-end;
+                @include column;
         
                 h3 {
                     margin: 2px;

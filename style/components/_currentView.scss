@@ -1,15 +1,11 @@
 .current-view {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include column;
+    margin: 50px 0;
     h1 {
         margin:5px 0 0 0;;
     }
     .date-info-div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        @include row;
         gap: 5px;
         h2 {
             font-size: 16px;
@@ -18,13 +14,11 @@
     }
 
     .weather-info-div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        @include row;
         gap: 10px;
         .current-icon {
             width: 50px;
+            @include iconColor;
         }
         p {
             font-size: 40px;

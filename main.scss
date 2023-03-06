@@ -1,8 +1,19 @@
+
 //Partials
 @import "style/partials/variables";
 @import "style/partials/mixins";
 
 //Components
-@import "style/components/commons";
+@import "style/components/header";
 @import "style/components/currentView";
 @import "style/components/weekDayList";
+@import "style/components/footer";
+
+body {
+    margin:0;
+    background-color: $maincolor;
+}
+
+* {
+    color: $mainTextColor;
+}
