@@ -1,19 +1,29 @@
+import { getWeather } from "./javascript/getWeather.js";
+import { getTime } from "./javascript/getTime.js";
+import { createWeatherArray } from "./javascript/createWeatherArray.js";
+
+// Function that tries to find location of users device on visit to the site.
 const onVisit = async () => {
     navigator.geolocation.getCurrentPosition(success, error);
 }
 
-function success(pos) {
+// If "onVisit" is successfull in finding the users device:
+async function success(pos) {
     const crd = pos.coords;
   
-    console.log("Your current position is:");
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`);
-  }
+    createWeatherData(crd.latitude, crd.longitude);
+}
 
+// If "onVisit" is not successfull in finding the users device:
 function error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
     console.log(`We can't find your location!`);
+}
+
+const createWeatherData = async (latitude, longitude) => {
+    const weatherData = await getWeather(latitude, longitude);
+    const timeData = getTime(weatherData);
+    console.log(createWeatherArray(weatherData, timeData));
 }
 
 onVisit();
