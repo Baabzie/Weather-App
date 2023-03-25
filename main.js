@@ -1,6 +1,7 @@
 import { getWeather } from "./javascript/getWeather.js";
 import { getTime } from "./javascript/getTime.js";
 import { createWeatherArray } from "./javascript/createWeatherArray.js";
+import { createWeekView } from "./javascript/weekView.js";
 
 // Function that tries to find location of users device on visit to the site.
 const onVisit = async () => {
@@ -23,7 +24,9 @@ function error(err) {
 const createWeatherData = async (latitude, longitude) => {
     const weatherData = await getWeather(latitude, longitude);
     const timeData = getTime(weatherData);
-    console.log(createWeatherArray(weatherData, timeData));
+    const weatherArray = createWeatherArray(weatherData, timeData);
+    console.log(weatherArray);
+    createWeekView(weatherArray);
 }
 
 onVisit();

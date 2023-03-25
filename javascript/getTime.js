@@ -26,7 +26,7 @@ export const getTime = (data) => {
               day: new Date(day).getDate(),
               month: (new Date(day).getMonth()) + 1,
               year: new Date(day).getFullYear(),
-              fulldate: (new Date(day)).toISOString(),
+              fulldate: ((new Date(day)).toISOString()).substr(0, 10),
             },
         }
         weekdayArray.push(obj);
