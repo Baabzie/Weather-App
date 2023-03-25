@@ -1,5 +1,6 @@
 import { getWeather } from "./javascript/getWeather.js";
 import { getTime } from "./javascript/getTime.js";
+import { createCurrentWeatherObject } from "./javascript/createCurrentWeatherObject.js";
 import { createWeatherArray } from "./javascript/createWeatherArray.js";
 import { createWeekView } from "./javascript/weekView.js";
 
@@ -24,9 +25,10 @@ function error(err) {
 const createWeatherData = async (latitude, longitude) => {
     const weatherData = await getWeather(latitude, longitude);
     const timeData = getTime(weatherData);
+    const currentWeatherObject = createCurrentWeatherObject(weatherData)
     const weatherArray = createWeatherArray(weatherData, timeData);
     console.log(weatherArray);
-    createWeekView(weatherArray);
+    createWeekView(currentWeatherObject, weatherArray);
 }
 
 onVisit();

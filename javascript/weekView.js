@@ -1,7 +1,25 @@
 import { weatherIcon } from "./weatherIcon.js";
 
-export function createWeekView(weatherArray) {
+export function createWeekView(currentWeatherObject, weatherArray) {
     const weekViewDiv = document.getElementById("weekViewDiv");
+
+    // Creating content to show current weather.
+    console.log(currentWeatherObject)
+    weekViewDiv.innerHTML = `
+    <div id="currentDiv">
+        <div class="current-view">
+            <h1>Your position</h1>
+            <div class="date-info-div">
+                <h2>${weatherArray[0].name}</h2>
+                <h2>${weatherArray[0].date.day}/${weatherArray[0].date.month}</h2>
+            </div>
+            <div class="weather-info-div">
+                <img class="current-icon" src="/content/icons/${weatherIcon(currentWeatherObject.weathercode)}.svg" alt="" srcset="">
+                <p>${currentWeatherObject.temp}°</p>
+            </div>
+        </div>
+    </div>
+    `
 
 
     //Creating list with buttons for every weekday and a header to them.
@@ -11,6 +29,7 @@ export function createWeekView(weatherArray) {
     const weekDayList = document.createElement("div");
     weekDayList.classList.add("week-day-list");
     weekDiv.append(weekDayList);
+    //First creating the "header"
     weekDayList.innerHTML = `
     <div class="week-day-header">
         <p>Weather</p>
@@ -20,7 +39,7 @@ export function createWeekView(weatherArray) {
         </div>
     </div>
     `
-
+    //Creating a button for every weekday.
     weatherArray.forEach((weekDay) => {
         const dayButton = document.createElement("button");
         dayButton.classList.add("week-day-btn");

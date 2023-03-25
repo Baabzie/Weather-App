@@ -33,7 +33,7 @@ export const getTime = (data) => {
     })
     
     let timeObj = {
-        currentTime : data.current_weather.time,     
+        currentTime : (data.current_weather.time).substr(11, 2),     
         week: weekdayArray,
     }
 
