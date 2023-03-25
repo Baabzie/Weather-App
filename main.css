@@ -128,6 +128,11 @@ header .search-div .search-icon-div img {
   align-items: center;
   gap: 15px;
 }
+.week-day-list .week-day-btn .date-info-div h2 {
+  min-width: 95px;
+  text-align: left;
+  font-size: 16px;
+}
 .week-day-list .week-day-btn .weather-info-div {
   display: flex;
   flex-direction: row;

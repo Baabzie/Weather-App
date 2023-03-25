@@ -30,6 +30,11 @@
         .date-info-div{
             @include row;
             gap: 15px;
+            h2 {
+                min-width: 95px;
+                text-align: left;
+                font-size: 16px;
+            }
         }
     
         .weather-info-div{

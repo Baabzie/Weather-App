@@ -27,11 +27,14 @@ export function createDailyView(dayIndex, currentWeatherObject, weatherArray) {
                 </div>
             </div>
     `
+    //Creating every hour.
     weatherArray[dayIndex].hourly.forEach((hour, i) => {
+        //If its the same day as today, we will skipp already passed hours. Note to self: Maybe should use other loop as to not use "return".
         if ((currentWeatherObject.time > i) && (dayIndex === "0")) {
             return;
         };
         let hourDiv = document.createElement("div");
+        //If the hour is a single digit we will add a "0" before to make it look better.
         let time = i.toString();
         if (time.length === 1){
             time = "0" + time;
@@ -40,11 +43,11 @@ export function createDailyView(dayIndex, currentWeatherObject, weatherArray) {
         hourDiv.innerHTML = `
             <span>${time}:00</span>
             <div class="info">
-                <p>${hour.windSpeed}</p>
-                <p>${hour.rain}</p>
+                <p>${Math.round(hour.windSpeed)}</p>
+                <p>${Math.round(hour.rain)}</p>
                 <img class="hour-icon" src="content/icons/${weatherIcon(hour.weathercode)}.svg" alt="${weatherIcon(hour.weathercode)}">
                 <div class="temp">
-                    <p>${hour.temp}°</p>
+                    <p>${Math.round(hour.temp)}°</p>
                 </div>
             </div>
         `

@@ -1,7 +1,7 @@
 import { weatherIcon } from "./weatherIcon.js";
 import { createDailyView } from "./dailyView.js";
 
-export function createWeekView(currentWeatherObject, weatherArray) {
+export function createWeekView(position, currentWeatherObject, weatherArray) {
     const weekViewDiv = document.getElementById("weekViewDiv");
 
     // Creating content to show current weather.
@@ -9,14 +9,14 @@ export function createWeekView(currentWeatherObject, weatherArray) {
     weekViewDiv.innerHTML = `
     <div id="currentDiv">
         <div class="current-view">
-            <h1>Your position</h1>
+            <h1>${position}</h1>
             <div class="date-info-div">
                 <h2>${weatherArray[0].name}</h2>
                 <h2>${weatherArray[0].date.day}/${weatherArray[0].date.month}</h2>
             </div>
             <div class="weather-info-div">
                 <img class="current-icon" src="/content/icons/${weatherIcon(currentWeatherObject.weathercode)}.svg" alt="${weatherIcon(currentWeatherObject.weathercode)}">
-                <p>${currentWeatherObject.temp}°</p>
+                <p>${Math.round(currentWeatherObject.temp)}°</p>
             </div>
         </div>
     </div>
@@ -53,8 +53,8 @@ export function createWeekView(currentWeatherObject, weatherArray) {
         <div class="weather-info-div">
             <img class="week-day-icon" src="/content/icons/${weatherIcon(weekDay.daily.weathercode)}.svg" alt="${weatherIcon(weekDay.daily.weathercode)}">
             <div class="week-day-temperature-div">
-                <h3>${weekDay.daily.tempMax}°</h3>
-                <h3>${weekDay.daily.tempMin}°</h3>
+                <h3>${Math.round(weekDay.daily.tempMax)}°</h3>
+                <h3>${Math.round(weekDay.daily.tempMin)}°</h3>
             </div>
         </div>
         `
