@@ -1,3 +1,5 @@
+import { weatherIcon } from "./weatherIcon.js";
+
 export function createDailyView(dayIndex, currentWeatherObject, weatherArray) {
     //Set the div for week view to empty to give the illusion of switching page.
     document.getElementById("weekViewDiv").innerHTML = "";
@@ -26,16 +28,23 @@ export function createDailyView(dayIndex, currentWeatherObject, weatherArray) {
             </div>
     `
     weatherArray[dayIndex].hourly.forEach((hour, i) => {
+        if ((currentWeatherObject.time > i) && (dayIndex === "0")) {
+            return;
+        };
         let hourDiv = document.createElement("div");
+        let time = i.toString();
+        if (time.length === 1){
+            time = "0" + time;
+        }
         hourDiv.classList.add("hour");
         hourDiv.innerHTML = `
-            <span>${i}:00</span>
+            <span>${time}:00</span>
             <div class="info">
-                <p>10</p>
-                <p>3</p>
-                <img class="hour-icon" src="content/icons/cloud-bolt.svg" alt="">
+                <p>${hour.windSpeed}</p>
+                <p>${hour.rain}</p>
+                <img class="hour-icon" src="content/icons/${weatherIcon(hour.weathercode)}.svg" alt="${weatherIcon(hour.weathercode)}">
                 <div class="temp">
-                    <p>-4°</p>
+                    <p>${hour.temp}°</p>
                 </div>
             </div>
         `
