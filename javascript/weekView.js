@@ -1,4 +1,5 @@
 import { weatherIcon } from "./weatherIcon.js";
+import { createDailyView } from "./dailyView.js";
 
 export function createWeekView(currentWeatherObject, weatherArray) {
     const weekViewDiv = document.getElementById("weekViewDiv");
@@ -14,7 +15,7 @@ export function createWeekView(currentWeatherObject, weatherArray) {
                 <h2>${weatherArray[0].date.day}/${weatherArray[0].date.month}</h2>
             </div>
             <div class="weather-info-div">
-                <img class="current-icon" src="/content/icons/${weatherIcon(currentWeatherObject.weathercode)}.svg" alt="" srcset="">
+                <img class="current-icon" src="/content/icons/${weatherIcon(currentWeatherObject.weathercode)}.svg" alt="${weatherIcon(currentWeatherObject.weathercode)}">
                 <p>${currentWeatherObject.temp}°</p>
             </div>
         </div>
@@ -40,9 +41,10 @@ export function createWeekView(currentWeatherObject, weatherArray) {
     </div>
     `
     //Creating a button for every weekday.
-    weatherArray.forEach((weekDay) => {
+    weatherArray.forEach((weekDay, i) => {
         const dayButton = document.createElement("button");
         dayButton.classList.add("week-day-btn");
+        dayButton.value = i;
         dayButton.innerHTML = `
         <div class="date-info-div">
             <h2>${weekDay.name}</h2>
@@ -56,6 +58,9 @@ export function createWeekView(currentWeatherObject, weatherArray) {
             </div>
         </div>
         `
+        dayButton.addEventListener("click", () => {
+            createDailyView(dayButton.value, currentWeatherObject, weatherArray);
+        })
         weekDayList.append(dayButton);
     })
 }

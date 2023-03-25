@@ -25,7 +25,7 @@ function error(err) {
 const createWeatherData = async (latitude, longitude) => {
     const weatherData = await getWeather(latitude, longitude);
     const timeData = getTime(weatherData);
-    const currentWeatherObject = createCurrentWeatherObject(weatherData)
+    const currentWeatherObject = createCurrentWeatherObject(weatherData, timeData)
     const weatherArray = createWeatherArray(weatherData, timeData);
     console.log(weatherArray);
     createWeekView(currentWeatherObject, weatherArray);
