@@ -1,3 +1,5 @@
+import { weatherIcon } from "./weatherIcon.js";
+
 export function createWeekView(weatherArray) {
     const weekViewDiv = document.getElementById("weekViewDiv");
 
@@ -28,7 +30,7 @@ export function createWeekView(weatherArray) {
             <h3>${weekDay.date.day}/${weekDay.date.month}</h3>
         </div>
         <div class="weather-info-div">
-            <img class="week-day-icon" src="/content/icons/snowflake.svg" alt="">
+            <img class="week-day-icon" src="/content/icons/${weatherIcon(weekDay.daily.weathercode)}.svg" alt="${weatherIcon(weekDay.daily.weathercode)}">
             <div class="week-day-temperature-div">
                 <h3>${weekDay.daily.tempMax}°</h3>
                 <h3>${weekDay.daily.tempMin}°</h3>
