@@ -20,6 +20,7 @@ header .search-div .search-bar-div input {
   border: none;
   border-radius: 16px 0 0 16px;
   height: 30px;
+  color: black;
 }
 header .search-div .search-icon-div {
   background-color: #fff;
@@ -35,6 +36,17 @@ header .search-div .search-icon-div {
 }
 header .search-div .search-icon-div img {
   height: 20px;
+}
+header .search-div .search-results #placesList {
+  list-style: none;
+}
+header .search-div .search-results #placesList .place-btn {
+  display: flex;
+  align-items: center;
+  color: black;
+}
+header .search-div .search-results #placesList .place-btn .flag {
+  width: 30px;
 }
 
 .current-view {

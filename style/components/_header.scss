@@ -15,6 +15,7 @@ header {
                 @include border;
                 border-radius: 16px 0 0 16px;
                 height: 30px;
+                color: $secondTextColor;
             }
         }
         .search-icon-div{
@@ -26,6 +27,19 @@ header {
             @include row;
             img {
                 height: 20px;
+            }
+        }
+        .search-results {
+            #placesList {
+                list-style: none;
+                .place-btn {
+                    display: flex;
+                    align-items: center;
+                    color: $secondTextColor;
+                    .flag {
+                        width: 30px;;
+                    }
+                }
             }
         }
     }

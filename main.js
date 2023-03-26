@@ -4,6 +4,7 @@ import { createCurrentWeatherObject } from "./javascript/createCurrentWeatherObj
 import { createWeatherArray } from "./javascript/createWeatherArray.js";
 import { createWeekView } from "./javascript/weekView.js";
 import { getYourPositionData } from "./javascript/getYourPositonData.js";
+import "./javascript/search.js";
 
 // Function that tries to find location of users device on visit to the site.
 const onVisit = async () => {
