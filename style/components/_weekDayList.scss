@@ -24,22 +24,29 @@
         padding-left: 20px;
         padding-right: 20px;
         @include border;
+        &:hover {
+            cursor: pointer;
+        }
 
         @include gradiant;
     
         .date-info-div{
             @include row;
-            gap: 15px;
+            gap: 10px;
             h2 {
-                min-width: 95px;
+                min-width: 90px;
                 text-align: left;
                 font-size: 16px;
+            }
+            h3 {
+                width: 31px;
+                text-align: left;
             }
         }
     
         .weather-info-div{
             @include row;
-            gap:20px;
+            gap:15px;
     
             .week-day-icon {
                 width: 20px;

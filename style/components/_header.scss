@@ -8,14 +8,19 @@ header {
         }
     }
     .search-div{
-        @include row;
+        @include column;
         .search-bar-div{
             
             input{
                 @include border;
                 border-radius: 16px 0 0 16px;
                 height: 30px;
+                padding-left: 10px;
                 color: $secondTextColor;
+                &:active,
+                &:focus {
+                    outline: none;
+                }
             }
         }
         .search-icon-div{
@@ -30,14 +35,43 @@ header {
             }
         }
         .search-results {
+            z-index: 1;
+            top: 60px;
+            right: 0;
+            position: absolute;
+            border-radius: 8px;
+            background-color: $searchBackground;
+            margin: 0 10px 0 10px;
             #placesList {
+                border-radius: 8px;
+                margin: 0;
                 list-style: none;
-                .place-btn {
-                    display: flex;
-                    align-items: center;
-                    color: $secondTextColor;
-                    .flag {
-                        width: 30px;;
+                padding: 0;
+                li {
+                    &:first-child {
+                        border-radius: 8px 8px 0 0;
+                    }
+                
+                    &:last-child {
+                        border-radius: 0 0 8px 8px;
+                    }
+                    .place-btn {
+                        cursor: pointer;
+                        border-radius: inherit;
+                        display: flex;
+                        align-items: center;
+                        color: $secondTextColor;
+                        text-align: left;
+                        width: 100%;
+                        border: none;
+                        background-color: $searchBackground;
+                        &:hover {
+                            background-color: $searchBackgroundHover;
+                        }
+                        .flag {
+                            width: 30px;
+                            margin-right: 5px;
+                        }
                     }
                 }
             }

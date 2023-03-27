@@ -29,3 +29,11 @@ main {
 * {
     color: $mainTextColor;
 }
+
+.row {
+    @include row;
+}
+
+.column {
+    @include column;
+}
