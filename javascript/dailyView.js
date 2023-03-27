@@ -1,31 +1,45 @@
 import { weatherIcon } from "./weatherIcon.js";
 
-export function createDailyView(dayIndex, currentWeatherObject, weatherArray) {
+export function createDailyView(position, dayIndex, currentWeatherObject, weatherArray) {
     //Set the div for week view to empty to give the illusion of switching page.
     document.getElementById("weekViewDiv").innerHTML = "";
-    
     const dayViewDiv = document.getElementById("dayViewDiv");
+
+    const breadNavDiv = document.createElement("div");
+    breadNavDiv.classList.add("bread-nav");
+    breadNavDiv.innerHTML = `
+        <div id="home" class="bread-nav-home">
+            <div class="home-icon-holder">
+                <img class="home-icon" src="content/icons/house.svg" alt="home">
+            </div>
+            <h3>${position}</h3>
+        </div>
+        <span>/</span>
+        <div class="breadcrumb-day">
+            <h3>${weatherArray[dayIndex].name}</h3>
+        </div>
+    `
+    dayViewDiv.append(breadNavDiv);
     //Creating h1 for day and then header.
     const dayList = document.createElement("div");
     dayList.classList.add("day-list");
     dayViewDiv.append(dayList);
     dayList.innerHTML = `
-        <h1>${weatherArray[dayIndex].name}</h1>
-            <div class="day-list-header">
-                <span>Time</span>
-                <div class="info">
-                    <div class="wind">
-                        <p>Wind</p>
-                        <p>(m/s)</p>
-                    </div>
-                    <div class="rain">
-                        <p>Rain</p>
-                        <p>(mm)</p>
-                    </div>
-                    <p>Weather</p>
-                    <p>Temp</p>
+        <div class="day-list-header">
+            <span>Time</span>
+            <div class="info">
+                <div class="wind">
+                    <p>Wind</p>
+                    <p>(m/s)</p>
                 </div>
+                <div class="rain">
+                    <p>Rain</p>
+                    <p>(mm)</p>
+                </div>
+                <p>Weather</p>
+                <p>Temp</p>
             </div>
+        </div>
     `
     //Creating every hour.
     weatherArray[dayIndex].hourly.forEach((hour, i) => {

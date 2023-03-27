@@ -10,17 +10,21 @@ searchInput.addEventListener("input", () => {
 })
 
 async function getPlaces(places) {
-    const url = `https://geocoding-api.open-meteo.com/v1/search?name=${places}`
-    const res = await fetch(url);
-    const data = await res.json();
-    createPlacesList(data);
+    try {
+        const url = `https://geocoding-api.open-meteo.com/v1/search?name=${places}`
+        const res = await fetch(url);
+        const data = await res.json();
+        createPlacesList(data);       
+    }
+    catch {
+
+    }
 }
 
 const createPlacesList = (arr) => {
     placesList.innerHTML = "";
     searchResults= [];
     searchResults = arr.results;
-    console.log(searchResults);
     arr.results.forEach((location) => {
         let name = "";
         let state = "";

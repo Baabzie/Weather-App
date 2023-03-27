@@ -2,6 +2,7 @@ import { weatherIcon } from "./weatherIcon.js";
 import { createDailyView } from "./dailyView.js";
 
 export function createWeekView(position, currentWeatherObject, weatherArray) {
+    document.getElementById("dayViewDiv").innerHTML = "";
     const weekViewDiv = document.getElementById("weekViewDiv");
 
     // Creating content to show current weather.
@@ -59,7 +60,7 @@ export function createWeekView(position, currentWeatherObject, weatherArray) {
         </div>
         `
         dayButton.addEventListener("click", () => {
-            createDailyView(dayButton.value, currentWeatherObject, weatherArray);
+            createDailyView(position, dayButton.value, currentWeatherObject, weatherArray);
         })
         weekDayList.append(dayButton);
     })
