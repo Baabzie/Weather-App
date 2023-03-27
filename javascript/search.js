@@ -63,7 +63,7 @@ const createPlacesList = (arr) => {
 }
 
 
-//A Function to get the name, latitude and longitude from the search and then running the function to present the weather at that location.
+//Function to get the name, latitude and longitude from the search and then running the function to present the weather at that location.
 const getLocationData = (id) => {
     let idAsNumber = (parseInt(id))
     searchResults.forEach((index) => {
