@@ -1,3 +1,5 @@
+import {createWeatherData} from "../main.js";
+
 const searchInput = document.getElementById("searchInput");
 const placesList = document.getElementById("placesList");
 let searchResults = [];
@@ -52,8 +54,19 @@ const createPlacesList = (arr) => {
         place.append(placeBtn);
         placesList.append(place);
         placeBtn.addEventListener("click", () => {
-            getCoordinates(placeBtn.value)
+            getLocationData(placeBtn.value)
+            placesList.innerHTML = "";
+            searchInput.value = "";
         })
     })
 
+}
+
+const getLocationData = (id) => {
+    let idAsNumber = (parseInt(id))
+    searchResults.forEach((index) => {
+        if (index.id === idAsNumber) {
+            createWeatherData(index.name, index.latitude, index.longitude)
+        }
+    })
 }

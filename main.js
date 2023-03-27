@@ -24,7 +24,7 @@ function error(err) {
     console.log(`We can't find your location!`);
 }
 
-const createWeatherData = async (position, latitude, longitude) => {
+export const createWeatherData = async (position, latitude, longitude) => {
     const weatherData = await getWeather(latitude, longitude);
     const timeData = getTime(weatherData);
     const currentWeatherObject = createCurrentWeatherObject(weatherData, timeData)
