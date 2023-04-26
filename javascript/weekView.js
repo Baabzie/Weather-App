@@ -16,7 +16,7 @@ export function createWeekView(position, currentWeatherObject, weatherArray) {
                 <h2>${weatherArray[0].date.day}/${weatherArray[0].date.month}</h2>
             </div>
             <div class="weather-info-div">
-                <img class="current-icon" src="/content/icons/${weatherIcon(currentWeatherObject.weathercode)}.svg" alt="${weatherIcon(currentWeatherObject.weathercode)}">
+                <img class="current-icon" src="content/icons/${weatherIcon(currentWeatherObject.weathercode)}.svg" alt="${weatherIcon(currentWeatherObject.weathercode)}">
                 <p>${Math.round(currentWeatherObject.temp)}°</p>
             </div>
         </div>
@@ -52,7 +52,7 @@ export function createWeekView(position, currentWeatherObject, weatherArray) {
             <h3>${weekDay.date.day}/${weekDay.date.month}</h3>
         </div>
         <div class="weather-info-div">
-            <img class="week-day-icon" src="/content/icons/${weatherIcon(weekDay.daily.weathercode)}.svg" alt="${weatherIcon(weekDay.daily.weathercode)}">
+            <img class="week-day-icon" src="content/icons/${weatherIcon(weekDay.daily.weathercode)}.svg" alt="${weatherIcon(weekDay.daily.weathercode)}">
             <div class="week-day-temperature-div">
                 <h3>${Math.round(weekDay.daily.tempMax)}°</h3>
                 <h3>${Math.round(weekDay.daily.tempMin)}°</h3>
